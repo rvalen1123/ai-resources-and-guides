@@ -1,0 +1,95 @@
+# [Project Name] - Claude Code Context
+
+> **Based on:** [Anthropic's CLAUDE.md Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) and community-proven patterns from [Claude.md Configuration Guide](https://apidog.com/blog/claude-md/).
+
+## Project Overview
+[Brief description of what this project does and its main purpose]
+
+**Tech Stack:** [e.g., Next.js, TypeScript, PostgreSQL, Redis]  
+**Architecture:** [e.g., Microservices, Monolith, JAMstack]
+
+## Key Information
+
+### Repository Structure
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Route handlers
+├── lib/           # Utility functions and shared logic
+├── styles/        # CSS and styling
+└── types/         # TypeScript type definitions
+```
+
+### Coding Standards
+- **Language:** [TypeScript/JavaScript/Python/etc.]
+- **Style Guide:** [Prettier, ESLint config, PEP8, etc.]
+- **Testing:** [Jest, Vitest, pytest, etc.]
+- **Documentation:** [JSDoc, docstrings, inline comments for complex logic]
+
+### Development Workflow
+- **Branch Strategy:** [main/develop, feature branches, etc.]
+- **Testing:** [Run tests before commits, coverage requirements]
+- **Deployment:** [CI/CD pipeline, staging/production environments]
+
+## Important Context
+
+### Business Logic
+[Explain key business concepts, domain models, or workflows that Claude should understand]
+
+### External Dependencies
+- **APIs:** [List important external services]
+- **Databases:** [Schema info, important tables/collections]
+- **Third-party Services:** [Payment, auth, email providers, etc.]
+
+### Common Patterns
+[Describe patterns used throughout the codebase that Claude should follow]
+
+## Guidelines for Claude
+
+### DO:
+- Follow existing code patterns and conventions
+- Write comprehensive tests for new functionality
+- Update documentation when adding features
+- Use TypeScript strict mode (if applicable)
+- [Add project-specific rules]
+
+### DON'T:
+- Modify existing API contracts without discussion
+- Skip error handling
+- Hardcode configuration values
+- [Add project-specific constraints]
+
+### Security Notes
+[Any security considerations, authentication patterns, or sensitive areas to be careful with]
+
+---
+
+**Last Updated:** [Date]  
+**Team:** [Team/contact info for questions]
+
+<!--
+TEMPLATE INSTRUCTIONS:
+
+1. Replace all [bracketed placeholders] with your project-specific information
+
+2. Keep this file concise but informative - Claude reads this automatically
+   Official guidance: "Your CLAUDE.md files become part of Claude's prompts, so they should be refined like any frequently used prompt" - Anthropic
+
+3. Use the # key during development to automatically add content to CLAUDE.md:
+   "Press the # key to give Claude an instruction that it will automatically incorporate into the relevant CLAUDE.md" - Official Best Practices
+
+4. Update regularly as the project evolves
+
+5. Consider creating subdirectory CLAUDE.md files for specific areas:
+   - src/components/CLAUDE.md (UI component patterns)
+   - src/api/CLAUDE.md (API conventions)
+   - tests/CLAUDE.md (Testing strategies)
+
+6. This file is most effective when it contains:
+   - Project-specific context Claude can't infer
+   - Coding standards and patterns to follow
+   - Business domain knowledge
+   - Important constraints or gotchas
+
+Remove these instructions when you customize the template.
+-->
