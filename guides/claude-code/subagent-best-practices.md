@@ -2,6 +2,8 @@
 
 *For those who've been accidentally doing advanced multi-agent orchestration by just asking nicely*
 
+> **Sources:** This guide synthesizes best practices from [Anthropic's official Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents), [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices), and community findings from experienced practitioners.
+
 ## The Two Paths to Subagent Enlightenment
 
 ### Path 1: The "Wait, That Was Advanced?" Method (Casual Subagents)
@@ -20,9 +22,12 @@ You've probably been doing this without knowing it was a "feature":
 
 **Best Practices for Casual Subagents:**
 - Just ask for what you want naturally - "use 3 parallel tasks to explore this codebase"
-- Max parallelism is 10 (Claude won't judge you for asking for 20, it'll just queue them)
-- Don't specify parallelism level if you want dynamic queuing (more efficient)
+- Max parallelism is 10 tasks running simultaneously¹ (Claude will queue additional requests)
+- Don't specify parallelism level if you want dynamic queuing (more efficient)²
 - Use this for: code exploration, parallel analysis, independent subtasks
+
+> ¹ Source: [Claude Code Subagent Deep Dive](https://cuong.io/blog/2025/06/24-claude-code-subagent-deep-dive)  
+> ² As documented in [Anthropic's Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices): "Telling Claude to use subagents to verify details or investigate particular questions...tends to preserve context availability without much downside in terms of lost efficiency."
 
 ### Path 2: The "I'm Building a Digital Software Team" Method (Official Subagents)
 
@@ -108,7 +113,16 @@ Your mission:
 Your battle cry: "Why use one loop when you can use none?"
 ```
 
-## Advanced Subagent Strategies
+## Advanced Workflow Integration
+
+### Thinking Levels for Better Planning
+Before deploying subagents, use Claude's built-in thinking levels for better analysis⁸:
+- **think** - Basic extended reasoning (4,000 tokens)
+- **think hard** - Deeper analysis (more computational budget)  
+- **think harder** - Even more thorough evaluation
+- **ultrathink** - Maximum reasoning budget (31,999 tokens)
+
+> ⁸ Source: [Anthropic's Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices): "These specific phrases are mapped directly to increasing levels of thinking budget in the system"
 
 ### Multi-Perspective Problem Solving
 ```bash
@@ -138,9 +152,12 @@ Your battle cry: "Why use one loop when you can use none?"
 ## Pro Tips for Subagent Management
 
 ### Context Efficiency Hacks
-- **Use nested CLAUDE.md files** for maximum context efficiency with subagents
-- **Spawn parallel agents in plan mode** first, then switch to edit mode
-- **Each subagent gets its own context window** - exploit this for large codebases
+- **Use nested CLAUDE.md files** for maximum context efficiency with subagents³
+- **Spawn parallel agents in plan mode** first, then switch to edit mode⁴
+- **Each subagent gets its own context window** - exploit this for large codebases⁵
+
+> ³ ⁴ Source: [Tyler Burnam's Claude Code Guide](https://tylerburnam.medium.com/how-i-use-claude-code-c73e5bfcc309)  
+> ⁵ Official documentation: [Claude Code Sub Agents](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
 
 ### Tool Access Patterns
 ```yaml
@@ -169,12 +186,73 @@ Deploy 3 specialized subagents:
 Usage: `/debug-squad "describe the bug here"`
 ```
 
+## File Structure for Subagents
+
+### Project-Level Subagents
+```
+your-project/
+├── .claude/
+│   ├── agents/
+│   │   ├── security-reviewer.md
+│   │   ├── test-writer.md
+│   │   └── performance-optimizer.md
+│   └── commands/
+│       ├── debug-squad.md
+│       └── refactor-team.md
+└── CLAUDE.md
+```
+
+### User-Level Subagents
+```
+~/.config/claude/agents/
+├── universal-debugger.md
+├── code-explainer.md
+└── architecture-reviewer.md
+```
+
+## Token Usage & Cost Management
+
+**Reality Check:** Subagents consume significantly more tokens
+- Each subagent maintains independent context windows
+- Sessions with 3 active subagents typically consume ~3-4x more tokens
+- Reserve subagents for genuinely complex scenarios
+
+**Smart Resource Management:**
+- Terminate subagents when their expertise is no longer needed
+- Use casual subagents for exploration, formal subagents for repeated workflows
+- Monitor your usage if you're on API billing
+
 ## When NOT to Use Subagents
 
 - **Simple, linear tasks** - Don't orchestrate a team to change a variable name
 - **When context sharing is critical** - Subagents can't read each other's minds
-- **Token-conscious scenarios** - Each subagent multiplies your token usage ~3-4x
+- **Token-conscious scenarios** - Each subagent multiplies your token usage
 - **When you're feeling overwhelmed** - Sometimes one Claude is enough Claude
+
+## Creating Your First Custom Subagent
+
+### Step 1: Generate with Claude
+```bash
+> Create a subagent for API testing that focuses on:
+> - REST endpoint validation
+> - Response schema checking  
+> - Performance benchmarking
+> Include specific tools and a detailed system prompt.
+```
+
+### Step 2: Refine and Customize
+```bash
+# Save the generated content to:
+.claude/agents/api-tester.md
+
+# Test it:
+> Use the api-tester subagent to validate our user endpoints
+```
+
+### Step 3: Iterate Based on Usage
+- Adjust the system prompt based on real usage
+- Fine-tune tool permissions
+- Add specific domain knowledge
 
 ## The Universal Truth
 
@@ -184,6 +262,21 @@ The casual approach ("split this into 4 tasks") and the formal approach (custom 
 
 Most importantly: If you've been accidentally using advanced features by just asking nicely, you're not doing it wrong. You're just naturally good at talking to AI. 🎯
 
+## Related Resources
+
+- [Custom Subagent Examples](../../examples/claude-code/custom-agents/) - Ready-to-use subagent templates
+- [Custom Commands](../../examples/claude-code/custom-commands/) - Automated subagent workflows
+- [Subagent Template](../../templates/claude-code/subagent-template.md) - Starting point for new agents
+
+## References & Sources
+
+1. [Official Anthropic Sub Agents Documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
+2. [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+3. [Claude Code Subagent Deep Dive](https://cuong.io/blog/2025/06/24-claude-code-subagent-deep-dive) by Cuong Tham
+4. [How I Use Claude Code](https://tylerburnam.medium.com/how-i-use-claude-code-c73e5bfcc309) by Tyler Burnam
+5. [Claude Code: Best practices for agentic coding](https://simonwillison.net/2025/Apr/19/claude-code-best-practices/) by Simon Willison
+6. [GoatReview Subagent Tutorial](https://goatreview.com/how-to-use-claude-code-subagents-tutorial/)
+
 ---
 
-*Got other subagent patterns that work well? The AI community is still figuring this out together. Share your discoveries!*
+*Got other subagent patterns that work well? The AI community is still figuring this out together. Share your discoveries by contributing to this repository!*
