@@ -1,5 +1,7 @@
 # Custom Claude Code Subagents
 
+> **Based on:** [Official Anthropic Sub Agents Documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents) and best practices from the Claude Code community.
+
 Ready-to-use, lightweight subagent templates for specialized coding tasks. Each subagent is designed to stay under the 400-character limit while providing focused expertise.
 
 ## Available Subagents
@@ -49,6 +51,9 @@ These subagents follow the **official Claude Code patterns**:
 - **Tool-specific** - Appropriate tool permissions
 
 ## Creating Custom Subagents
+
+### Official Recommendation
+**Start with Claude-generated agents:** Anthropic recommends "generating your initial sub agent with Claude and then iterating on it to make it personally yours. This approach gives you the best results - a solid foundation that you can customize to your specific needs."
 
 Keep it simple:
 1. **Short description** - What does it do?
