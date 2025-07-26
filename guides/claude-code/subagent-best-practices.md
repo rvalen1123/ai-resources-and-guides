@@ -169,73 +169,12 @@ Deploy 3 specialized subagents:
 Usage: `/debug-squad "describe the bug here"`
 ```
 
-## File Structure for Subagents
-
-### Project-Level Subagents
-```
-your-project/
-├── .claude/
-│   ├── agents/
-│   │   ├── security-reviewer.md
-│   │   ├── test-writer.md
-│   │   └── performance-optimizer.md
-│   └── commands/
-│       ├── debug-squad.md
-│       └── refactor-team.md
-└── CLAUDE.md
-```
-
-### User-Level Subagents
-```
-~/.config/claude/agents/
-├── universal-debugger.md
-├── code-explainer.md
-└── architecture-reviewer.md
-```
-
-## Token Usage & Cost Management
-
-**Reality Check:** Subagents consume significantly more tokens
-- Each subagent maintains independent context windows
-- Sessions with 3 active subagents typically consume ~3-4x more tokens
-- Reserve subagents for genuinely complex scenarios
-
-**Smart Resource Management:**
-- Terminate subagents when their expertise is no longer needed
-- Use casual subagents for exploration, formal subagents for repeated workflows
-- Monitor your usage if you're on API billing
-
 ## When NOT to Use Subagents
 
 - **Simple, linear tasks** - Don't orchestrate a team to change a variable name
 - **When context sharing is critical** - Subagents can't read each other's minds
-- **Token-conscious scenarios** - Each subagent multiplies your token usage
+- **Token-conscious scenarios** - Each subagent multiplies your token usage ~3-4x
 - **When you're feeling overwhelmed** - Sometimes one Claude is enough Claude
-
-## Creating Your First Custom Subagent
-
-### Step 1: Generate with Claude
-```bash
-> Create a subagent for API testing that focuses on:
-> - REST endpoint validation
-> - Response schema checking  
-> - Performance benchmarking
-> Include specific tools and a detailed system prompt.
-```
-
-### Step 2: Refine and Customize
-```bash
-# Save the generated content to:
-.claude/agents/api-tester.md
-
-# Test it:
-> Use the api-tester subagent to validate our user endpoints
-```
-
-### Step 3: Iterate Based on Usage
-- Adjust the system prompt based on real usage
-- Fine-tune tool permissions
-- Add specific domain knowledge
 
 ## The Universal Truth
 
@@ -245,12 +184,6 @@ The casual approach ("split this into 4 tasks") and the formal approach (custom 
 
 Most importantly: If you've been accidentally using advanced features by just asking nicely, you're not doing it wrong. You're just naturally good at talking to AI. 🎯
 
-## Related Resources
-
-- [Custom Subagent Examples](../../examples/claude-code/custom-agents/) - Ready-to-use subagent templates
-- [Custom Commands](../../examples/claude-code/custom-commands/) - Automated subagent workflows
-- [Subagent Template](../../templates/claude-code/subagent-template.md) - Starting point for new agents
-
 ---
 
-*Got other subagent patterns that work well? The AI community is still figuring this out together. Share your discoveries by contributing to this repository!*
+*Got other subagent patterns that work well? The AI community is still figuring this out together. Share your discoveries!*
