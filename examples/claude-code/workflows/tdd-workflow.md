@@ -341,18 +341,16 @@ describe('UserAuthentication', () => {
    - Obvious what's being tested
 
 3. **Test behavior, not implementation**
-   ```typescript
-   // Good - tests behavior
-   it('should calculate total price with tax', () => {
-     expect(calculateTotal(100)).toBe(108)
-   })
-   
-   // Bad - tests implementation
-   it('should multiply price by 1.08', () => {
-     expect(calculator.multiplier).toBe(1.08)
-   })
-   ```
+```typescript
+// Good - tests behavior
+it('should calculate total price with tax', () => {
+  expect(calculateTotal(100)).toBe(108)
+})
 
+// Bad - tests implementation
+it('should multiply price by 1.08', () => {
+  expect(calculator.multiplier).toBe(1.08)
+})
 4. **Use thinking levels appropriately**
    - `think hard` for test case design
    - `think` for implementation
