@@ -12,6 +12,7 @@ This is a community space for sharing real-world configurations, workflows, and 
 - CLAUDE.md configurations that work well
 - MCP server combinations
 - Custom subagents
+- **Claude Code Skills** - Your reusable workflow packages
 - Workspace organization
 
 **Discovered Patterns:**
@@ -25,6 +26,7 @@ This is a community space for sharing real-world configurations, workflows, and 
 - Team setups
 - Project-specific adaptations
 - Industry-specific patterns
+- **Custom Skills** - Share your specialized skill packages
 
 ### Submission Guidelines
 
@@ -161,6 +163,47 @@ Choose the template that fits your contribution:
 ## Caveats
 [Limitations or considerations]
 ```
+
+#### Claude Code Skill Template
+```markdown
+# [Skill Name] - SKILL.md
+
+**Version:** 1.0.0
+**Author:** Your Name (@username)
+**Date:** 2024-XX-XX
+**Tags:** skill, [category], [domain]
+
+## Metadata
+- **Category:** [development | testing | documentation | etc.]
+- **Triggers:** [keywords that activate this skill]
+- **Dependencies:** [required tools or other skills]
+- **Compatibility:** [Claude Code IDE | API | Web | All]
+
+## Overview
+[What problem does this skill solve?]
+
+## Instructions
+[Step-by-step workflow for Claude to execute]
+
+## Examples
+[Real usage examples with inputs and outputs]
+
+## Resources
+[Included files: scripts, templates, references]
+
+## Results & Metrics
+[How this skill improved your workflow]
+
+## Sharing Options
+- **Upload Full Skill:** Create folder with SKILL.md and resources
+- **Link to External:** Share GitHub/Gist link to your skill
+- **Reference Official:** Link to published skill in Anthropic gallery
+```
+
+**Note on Skill Submissions:**
+- For **complete skills**, create a folder: `username-skill-name/` with SKILL.md and resources
+- For **external skills**, just link to your GitHub repo or published location
+- Follow the [Skill Template](../../templates/claude-code/skill-template.md) for structure
 
 ## Example Submissions
 
