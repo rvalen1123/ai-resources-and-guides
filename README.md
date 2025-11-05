@@ -101,7 +101,13 @@ A community-driven collection of comprehensive AI/ML guides, examples, and best 
 - **Found a better pattern?** Submit a PR!
 - **Have questions?** Open an issue
 - **Share your setup:** Add to [User Submissions](community/user-submissions/)
+- **Created a Claude Code Skill?** Share it in [Skills](examples/claude-code/skills/) or link to it from [Community Submissions](community/user-submissions/)
 - **Request a guide:** Open an issue with the "guide-request" label
+
+### External Claude Code Skills Resources
+- [Anthropic Skills Gallery](https://www.anthropic.com/news/skills) - Official skill collection
+- [Claude Community Forum](https://community.anthropic.com/) - User-shared skills and discussions
+- [GitHub Topics: claude-skills](https://github.com/topics/claude-skills) - Open-source skills on GitHub
 
 ## 📖 Contributing
 
