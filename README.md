@@ -4,6 +4,16 @@
 
 A community-driven collection of comprehensive AI/ML guides, examples, and best practices for modern development workflows with Claude Code.
 
+## 📖 Table of Contents
+
+- [Complete Guides](#-complete-guides) - In-depth documentation
+- [Quick Start](#-quick-start) - Get started in minutes
+- [Use Case Pathways](#-use-case-pathways) - Tailored learning paths
+- [Ready-to-Use Examples](#️-ready-to-use-examples) - Working code and patterns
+- [Templates](#-templates) - Quick-start configurations
+- [Coming Soon](#-coming-soon) - Future content
+- [Community](#-community) - Contribute and learn together
+
 ## 📚 Complete Guides
 
 ### Core Claude Code Concepts
@@ -14,14 +24,15 @@ A community-driven collection of comprehensive AI/ML guides, examples, and best 
 
 ### Extension & Integration
 - **[MCP Servers Guide](guides/claude-code/mcp-servers-guide.md)** - Complete Model Context Protocol reference with all servers
+- **[MCP Quick Reference](guides/claude-code/mcp-quick-reference.md)** - Fast lookup for common MCP configurations
 
 ## 🚀 Quick Start
 
 ### New to Claude Code?
-1. Start with [Claude Skills Reference](guides/claude-code/claude-skills-reference.md) - Understand what Claude can do
-2. Learn [Thinking Levels](guides/claude-code/thinking-levels-guide.md) - Use computational resources effectively
-3. Set up [CLAUDE.md](guides/claude-code/context-optimization.md) - Optimize your project context
-4. Explore [MCP Servers](guides/claude-code/mcp-servers-guide.md) - Extend Claude's capabilities
+1. **[Claude Skills Reference](guides/claude-code/claude-skills-reference.md)** - Understand what Claude can do natively
+2. **[Thinking Levels](guides/claude-code/thinking-levels-guide.md)** - Use computational resources effectively
+3. **[Context Optimization](guides/claude-code/context-optimization.md)** - Set up CLAUDE.md for your project
+4. **[MCP Quick Reference](guides/claude-code/mcp-quick-reference.md)** - Connect external tools (5 min setup)
 
 ### Ready to Level Up?
 - Create [Custom Subagents](guides/claude-code/subagent-best-practices.md) for specialized tasks
