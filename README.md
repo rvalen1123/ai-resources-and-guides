@@ -42,6 +42,7 @@ A community-driven collection of comprehensive AI/ML guides, examples, and best 
 ## 🛠️ Ready-to-Use Examples
 
 ### Claude Code
+- **[Claude Code Skills](examples/claude-code/skills/)** - Modular workflow packages: code reviewer, API docs generator, test coverage analyzer
 - **[Custom Subagents](examples/claude-code/custom-agents/)** - Security reviewers, test writers, performance optimizers
 - **[Custom Commands](examples/claude-code/custom-commands/)** - Reusable workflow automation
 - **[Proven Workflows](examples/claude-code/workflows/)** - TDD, debugging, refactoring, architecture patterns
@@ -50,6 +51,7 @@ A community-driven collection of comprehensive AI/ML guides, examples, and best 
 
 ### Claude Code
 - **[CLAUDE.md Template](templates/claude-code/CLAUDE.md-template)** - Project configuration starter
+- **[Skill Template](templates/claude-code/skill-template.md)** - Create reusable workflow packages
 - **[Subagent Template](templates/claude-code/subagent-template.md)** - Create specialized agents
 - **[MCP Config Template](templates/claude-code/mcp-config-template.json)** - External tool integration setup
 
@@ -99,7 +101,13 @@ A community-driven collection of comprehensive AI/ML guides, examples, and best 
 - **Found a better pattern?** Submit a PR!
 - **Have questions?** Open an issue
 - **Share your setup:** Add to [User Submissions](community/user-submissions/)
+- **Created a Claude Code Skill?** Share it in [Skills](examples/claude-code/skills/) or link to it from [Community Submissions](community/user-submissions/)
 - **Request a guide:** Open an issue with the "guide-request" label
+
+### External Claude Code Skills Resources
+- [Anthropic Skills Gallery](https://www.anthropic.com/news/skills) - Official skill collection
+- [Claude Community Forum](https://community.anthropic.com/) - User-shared skills and discussions
+- [GitHub Topics: claude-skills](https://github.com/topics/claude-skills) - Open-source skills on GitHub
 
 ## 📖 Contributing
 
